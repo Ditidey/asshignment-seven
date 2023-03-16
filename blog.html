@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                common: ["Rubik", "sans-serif"],
+              },
+            },
+          },
+        };
+      </script>
+</head>
+<body>
+     <h1 class="font-bold text-center text-4xl my-8 text-green-700">Welcome to the discussion blog</h1>
+     <!-- section for the question-answers -->
+     <section class="mx-20 my-8">
+        <h5 class="text-2xl font-bold">Question 1: Difference among map, foreach, find, filter?</h5>
+        <p class="text-lg"> Answer: These all are useable in the case of an array. But each method works differently with its own functionality. Like we use  <strong>map method</strong> to loop through each element of an array with returning an new array. But it does not change the original array. This method takes a function as a parameter. On the other hand, <strong>foreach method </strong>takes a function as an arguments. It returns undefined also it transform each element of an array. Also this method is not chainable like map method as map method can include find(), reduce() etc method after it. So, we used foreach when we did not need returning and need to console.log() inside the function, otherwise if we need to find a new returned array we can use map method. Beyond these the <strong>filter method</strong> executes with conditions and return a new array with checking element on specific condition. It also does not change the original array. It is filtering elements with criteria of an array but map method and foreach map do not do this. However the <strong>find method</strong> return first element of an array with checking truthy condition if it matched. It also return undefined if there are not any elements. When we need a truthy value we can use find method, otherwise if we need all truthy value we should use filter method.</p> <br>
+         
+        <h5 class="text-2xl font-bold">Question 2: Difference among localStorage, sessionStorage and cookies?</h5>
+        <p class="text-lg">Answer: LocalStorage, sessionStorage and cookies are ways to store data on clients' computer and server. But their ways of storing data are specified. Firstly, cookies can store and access data in server and client's site. But localStorage and sessionStorage cannot store and access data from server. Secondly, localStorage data can be found for a long time, including closing the tab and website. But sessionStorage cannot be found after closing the tab or website and cookies data will be expired after a certain time. Following that, memory capacity is various for each storage. Like localStorage's capacity is 10MB, sessionStorage allows 5Mb and cookies limit is 4KB. Finally, we should use sessionStorage when data is sensitive, and will be great to skip storing sensitive data in cookies. LocalStorage advantage is for storing data long time.</p> <br>
+
+        <h5 class="text-2xl font-bold">Question 3: What is event loop and how does it work?</h5>
+        <p class="text-lg">Answer: Javascript is a synchronous and single threaded language but with the help of event loop it works as an asynchronous language. So, the event loop is a mechanism behind the Javascript asynchronous performance. It executes code in a circle manner, such as constantly scan call stack, if it does not find any function, it includes a new function from event queue and process it.  It actually observes call stack and call queue. When the call stack is empty, it will push the first code from the call queue and execute it. For example, I am console.log(a) console.log(b) console.log(c), if I setTime or seInterval for 2/3 seconds on the second console.log, others code will not wait for executing it, they will run before it. This asynchronous works only possible for the event loop mechanism in js.</p>
+        
+     </section>
+     <!-- section for function explanation -->
+     <section class="mx-20 my-8">
+        <h4 class="text-2xl font-bold"> Function one: quizTimer()</h4>
+        <p class="text-lg">Explanation: It is a function for counting how much time a client takes to answer these questions in the quiz. This takes a boolean as a parameter. The parameter is truthy value from submit button, it means when a client click the submit button the counting will be stopped. And when the quiz will be started or clicked on start button it means it will be started counting. After that it will show total time in the website. Inside the function, it firstly checks is it truthy or falsy. Then set a timer with setInterval function of one second and increasing the counting. If the count greater then 60 second it will count as minute.</p> <br>
+
+        <h4 class="text-2xl font-bold"> Function two: chooseQuiz()</h4>
+        <p class="text-lg">Explanation: This function is executing to show correct or wrong answer of the quiz which user select. Primarily it is checking is it selected or not. If it is exist, it will show the the choosen answer section by the displayAnswer() function and increase the serial. These are working through iterating and checking given answer id and choosen answer id. And the splice method overwrite the array with choosen answer by user. Otherwise it will push on the answer array. Finally calling the displayAnswer() function to show data.</p>
+     </section>
+</body>
+</html>
